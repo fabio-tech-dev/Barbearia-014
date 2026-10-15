@@ -228,23 +228,38 @@
               ><a class="btn" data-ig data-i18n="cta.igShort"></a>
             </div>
           </div>
-          <a
-            class="map rv"
-            id="map"
-            target="_blank"
-            rel="noopener"
-            data-i18n-aria="a11y.map"
-          >
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path
-                d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"
-              />
-              <circle cx="12" cy="10" r="2.5" />
-            </svg>
-            <strong>014Barbershop</strong>
-            <span id="map-address"></span>
-            <span class="map-link" data-i18n="cta.directions"></span>
-          </a>
+          <div class="map rv">
+            <div class="map-preview">
+              <iframe
+                id="map-frame"
+                loading="lazy"
+                title="Mapa da 014Barbershop"
+                referrerpolicy="no-referrer"
+              ></iframe>
+              <a
+                class="map-link"
+                id="map-link"
+                target="_blank"
+                rel="noopener"
+                data-i18n-aria="a11y.map"
+              >
+                <span class="map-caption">
+                  <strong>014Barbershop</strong>
+                  <span id="map-address"></span>
+                  <span class="map-action" data-i18n="cta.directions"></span>
+                </span>
+              </a>
+            </div>
+            <small class="map-credit">
+              ©
+              <a
+                href="https://www.openstreetmap.org/copyright"
+                target="_blank"
+                rel="noopener"
+                >OpenStreetMap contributors</a
+              >
+            </small>
+          </div>
         </div>
       </section>
 

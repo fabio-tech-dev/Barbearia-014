@@ -43,9 +43,17 @@ const mapsUrl =
   "https://www.google.com/maps/search/?api=1&query=" +
   encodeURIComponent(C.address);
 $("#directions").href = mapsUrl;
-$("#map").href = mapsUrl;
+$("#map-link").href = mapsUrl;
 $("#addr").textContent = C.address;
 $("#map-address").textContent = C.address;
+const mapBounds = [
+  C.mapCoordinates.lon - 0.004,
+  C.mapCoordinates.lat - 0.0025,
+  C.mapCoordinates.lon + 0.004,
+  C.mapCoordinates.lat + 0.0025,
+].join(",");
+$("#map-frame").src =
+  `https://www.openstreetmap.org/export/embed.html?bbox=${encodeURIComponent(mapBounds)}&layer=mapnik&marker=${encodeURIComponent(`${C.mapCoordinates.lat},${C.mapCoordinates.lon}`)}`;
 $("#heroimg").style.objectPosition = I.hero.pos || "center";
 $("#heroimg").src = I.hero.src;
 $("#aboutimg").src = I.about.src;
@@ -102,6 +110,7 @@ function render() {
     e.setAttribute("aria-label", t(e.dataset.i18nAria)),
   );
   $$("[data-i18n-alt]").forEach((e) => (e.alt = t(e.dataset.i18nAlt)));
+  $("#map-frame").title = t("a11y.map");
   $("#copy").textContent = t("foot.copy", { y: new Date().getFullYear() });
   const ct = (c, s) =>
     has(`cat.${c.id}.${s}`)
