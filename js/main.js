@@ -39,12 +39,14 @@ $$("[data-ig]").forEach((a) => {
   a.rel = "noopener";
 });
 $$("[data-logo]").forEach((i) => (i.src = C.logo));
+// mapa e "Como chegar" usam C.mapsQuery (nome + endereço do Google) para abrir a ficha da barbearia
+const mapsQuery = C.mapsQuery || C.name + ", " + C.address;
 $("#directions").href =
   "https://www.google.com/maps/search/?api=1&query=" +
-  encodeURIComponent(C.address);
+  encodeURIComponent(mapsQuery);
 $("#addr").textContent = C.address;
 $("#map").innerHTML =
-  `<iframe loading="lazy" src="https://maps.google.com/maps?q=${encodeURIComponent(C.address)}&output=embed"></iframe>`;
+  `<iframe loading="lazy" src="https://maps.google.com/maps?q=${encodeURIComponent(mapsQuery)}&output=embed"></iframe>`;
 $("#heroimg").style.objectPosition = I.hero.pos || "center";
 $("#heroimg").src = I.hero.src;
 $("#aboutimg").src = I.about.src;

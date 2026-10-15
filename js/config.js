@@ -40,8 +40,12 @@ const CONFIG = {
     },
   ],
   instagramHandle: "@014barbershop",
-  address:
-    "Caminho de 29A, Tv. de Santa Quitéria 29A, 9020-119, Funchal, Portugal",
+  // Endereço mostrado no site
+  address: "Tv. de Santa Quitéria 29A, 9020-119 Funchal, Portugal",
+  // Pesquisa usada no mapa e no botão "Como chegar": nome + endereço como aparece no Google Maps,
+  // para abrir diretamente a ficha da barbearia (com fotos, avaliações e horário)
+  mapsQuery:
+    "014Barbershop, Caminho de, Tv. de Santa Quiteria 29A, 9020-119 Funchal, Portugal",
   // Cores: ver variáveis no topo de css/style.css
 
   // Fotografias (trocar por fotos reais; manter proporção aproximada)
