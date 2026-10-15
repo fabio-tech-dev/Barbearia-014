@@ -39,8 +39,7 @@ $$("[data-ig]").forEach((a) => {
   a.rel = "noopener";
 });
 $$("[data-logo]").forEach((i) => (i.src = C.logo));
-const mapCoordinates = `${C.mapCoordinates.lat},${C.mapCoordinates.lon}`;
-const mapsQuery = encodeURIComponent(mapCoordinates);
+const mapsQuery = encodeURIComponent(C.address);
 $("#directions").href =
   `https://www.google.com/maps/dir/?api=1&destination=${mapsQuery}`;
 $("#map-link").href =

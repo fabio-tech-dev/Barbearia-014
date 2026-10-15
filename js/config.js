@@ -6,8 +6,6 @@ const CONFIG = {
   logo: "assets/img/logo.jpg", // trocar pela logo original em alta qualidade
   booksyUrl: "https://014barbershop.booksy.com/", // URL única usada por TODOS os botões de reserva
   instagramUrl: "https://www.instagram.com/014barbershop/",
-  // Coordenadas aproximadas da zona indicada pelo código postal
-  mapCoordinates: { lat: 32.660075, lon: -16.9500402 },
   // VÍDEOS da secção Instagram: ficheiro (sem som), imagem de capa e link do Reel no Instagram
   reels: [
     {
@@ -43,7 +41,7 @@ const CONFIG = {
   ],
   instagramHandle: "@014barbershop",
   address:
-    "Caminho de 29A, Tv. de Santa Quitéria 29A, 9020-119, Funchal, Portugal",
+    "Caminho de, Tv. de Santa Quiteria 29A, 9020-119 Funchal, Portugal",
   // Cores: ver variáveis no topo de css/style.css
 
   // Fotografias (trocar por fotos reais; manter proporção aproximada)
