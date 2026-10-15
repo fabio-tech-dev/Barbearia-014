@@ -39,14 +39,12 @@ $$("[data-ig]").forEach((a) => {
   a.rel = "noopener";
 });
 $$("[data-logo]").forEach((i) => (i.src = C.logo));
-const mapCoordinates = `${C.mapCoordinates.lat},${C.mapCoordinates.lon}`;
-const mapCoordinatesQuery = encodeURIComponent(mapCoordinates);
 $("#directions").href =
-  `https://www.google.com/maps/dir/?api=1&destination=${mapCoordinatesQuery}`;
-$("#map-link").href =
-  `https://www.google.com/maps/search/?api=1&query=${mapCoordinatesQuery}`;
+  "https://www.google.com/maps/search/?api=1&query=" +
+  encodeURIComponent(C.address);
 $("#addr").textContent = C.address;
-$("#map-address").textContent = C.address;
+$("#map").innerHTML =
+  `<iframe loading="lazy" src="https://maps.google.com/maps?q=${encodeURIComponent(C.address)}&output=embed"></iframe>`;
 $("#heroimg").style.objectPosition = I.hero.pos || "center";
 $("#heroimg").src = I.hero.src;
 $("#aboutimg").src = I.about.src;
@@ -103,6 +101,7 @@ function render() {
     e.setAttribute("aria-label", t(e.dataset.i18nAria)),
   );
   $$("[data-i18n-alt]").forEach((e) => (e.alt = t(e.dataset.i18nAlt)));
+  $("#map iframe").title = t("a11y.map");
   updateMenuButton();
   $("#copy").textContent = t("foot.copy", { y: new Date().getFullYear() });
   const ct = (c, s) =>
