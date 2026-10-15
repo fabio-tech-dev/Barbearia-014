@@ -39,12 +39,13 @@ $$("[data-ig]").forEach((a) => {
   a.rel = "noopener";
 });
 $$("[data-logo]").forEach((i) => (i.src = C.logo));
-$("#directions").href =
+const mapsUrl =
   "https://www.google.com/maps/search/?api=1&query=" +
   encodeURIComponent(C.address);
+$("#directions").href = mapsUrl;
+$("#map").href = mapsUrl;
 $("#addr").textContent = C.address;
-$("#map").innerHTML =
-  `<iframe loading="lazy" src="https://maps.google.com/maps?q=${encodeURIComponent(C.address)}&output=embed"></iframe>`;
+$("#map-address").textContent = C.address;
 $("#heroimg").style.objectPosition = I.hero.pos || "center";
 $("#heroimg").src = I.hero.src;
 $("#aboutimg").src = I.about.src;
@@ -101,7 +102,6 @@ function render() {
     e.setAttribute("aria-label", t(e.dataset.i18nAria)),
   );
   $$("[data-i18n-alt]").forEach((e) => (e.alt = t(e.dataset.i18nAlt)));
-  $("#map iframe").title = t("a11y.map");
   $("#copy").textContent = t("foot.copy", { y: new Date().getFullYear() });
   const ct = (c, s) =>
     has(`cat.${c.id}.${s}`)
