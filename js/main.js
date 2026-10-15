@@ -46,8 +46,7 @@ $("#directions").href =
 $("#map-link").href =
   `https://www.google.com/maps/search/?api=1&query=${mapCoordinatesQuery}`;
 $("#addr").textContent = C.address;
-$("#map-frame").src =
-  `https://www.google.com/maps?q=${mapCoordinatesQuery}&output=embed`;
+$("#map-address").textContent = C.address;
 $("#heroimg").style.objectPosition = I.hero.pos || "center";
 $("#heroimg").src = I.hero.src;
 $("#aboutimg").src = I.about.src;
@@ -104,7 +103,6 @@ function render() {
     e.setAttribute("aria-label", t(e.dataset.i18nAria)),
   );
   $$("[data-i18n-alt]").forEach((e) => (e.alt = t(e.dataset.i18nAlt)));
-  $("#map-frame").title = t("a11y.map");
   updateMenuButton();
   $("#copy").textContent = t("foot.copy", { y: new Date().getFullYear() });
   const ct = (c, s) =>

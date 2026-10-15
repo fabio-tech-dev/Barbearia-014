@@ -231,25 +231,23 @@
               ><a class="btn" data-ig data-i18n="cta.igShort"></a>
             </div>
           </div>
-          <div class="map rv">
-            <div class="map-preview">
-              <iframe
-                id="map-frame"
-                loading="lazy"
-                title="Mapa da 014Barbershop"
-                allowfullscreen
-                referrerpolicy="no-referrer-when-downgrade"
-              ></iframe>
-            </div>
-            <a
-              class="map-link btn"
-              id="map-link"
-              target="_blank"
-              rel="noopener"
-              data-i18n-aria="a11y.mapLink"
-              ><span data-i18n="cta.directions"></span
-            ></a>
-          </div>
+          <a
+            class="map rv"
+            id="map-link"
+            target="_blank"
+            rel="noopener"
+            data-i18n-aria="a11y.mapLink"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"
+              />
+              <circle cx="12" cy="10" r="2.5" />
+            </svg>
+            <strong>014Barbershop</strong>
+            <span id="map-address"></span>
+            <span class="map-action" data-i18n="cta.directions"></span>
+          </a>
         </div>
       </section>
 
