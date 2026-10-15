@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
+    <a class="skip-link" href="#conteudo" data-i18n="a11y.skip"></a>
     <header>
       <div class="wrap nav">
         <a class="brand" href="#inicio" data-i18n-aria="a11y.home"
@@ -34,8 +35,8 @@
             >014Barbershop</span
           ></a
         >
-        <nav data-i18n-aria="a11y.main">
-          <ul>
+        <nav id="primary-navigation" data-i18n-aria="a11y.main">
+          <ul id="primary-navigation-list">
             <li><a href="#inicio" data-i18n="nav.home"></a></li>
             <li><a href="#servicos" data-i18n="nav.services"></a></li>
             <li><a href="#galeria" data-i18n="nav.gallery"></a></li>
@@ -69,15 +70,17 @@
           </div>
           <button
             class="burger"
+            type="button"
             data-i18n-aria="a11y.menu"
             aria-expanded="false"
+            aria-controls="primary-navigation-list"
           >
             <span></span><span></span>
           </button>
         </div>
       </div>
     </header>
-    <main>
+    <main id="conteudo" tabindex="-1">
       <section class="hero" id="inicio">
         <div class="big" aria-hidden="true">014</div>
         <div class="wrap">
@@ -234,31 +237,18 @@
                 id="map-frame"
                 loading="lazy"
                 title="Mapa da 014Barbershop"
-                referrerpolicy="no-referrer"
+                allowfullscreen
+                referrerpolicy="no-referrer-when-downgrade"
               ></iframe>
-              <a
-                class="map-link"
-                id="map-link"
-                target="_blank"
-                rel="noopener"
-                data-i18n-aria="a11y.map"
-              >
-                <span class="map-caption">
-                  <strong>014Barbershop</strong>
-                  <span id="map-address"></span>
-                  <span class="map-action" data-i18n="cta.directions"></span>
-                </span>
-              </a>
             </div>
-            <small class="map-credit">
-              ©
-              <a
-                href="https://www.openstreetmap.org/copyright"
-                target="_blank"
-                rel="noopener"
-                >OpenStreetMap contributors</a
-              >
-            </small>
+            <a
+              class="map-link btn"
+              id="map-link"
+              target="_blank"
+              rel="noopener"
+              data-i18n-aria="a11y.mapLink"
+              ><span data-i18n="cta.directions"></span
+            ></a>
           </div>
         </div>
       </section>
@@ -268,7 +258,13 @@
           <div class="rule">♛</div>
           <h2 class="rv" data-i18n="ig.title"></h2>
           <p class="sub rv" style="margin-inline: auto" data-i18n="ig.sub"></p>
-          <div class="reels" id="reels"></div>
+          <div
+            class="reels"
+            id="reels"
+            role="region"
+            tabindex="0"
+            data-i18n-aria="a11y.reels"
+          ></div>
           <a class="btn" data-ig data-i18n="cta.viewIg"></a>
         </div>
       </section>

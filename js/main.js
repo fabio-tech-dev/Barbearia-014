@@ -39,21 +39,15 @@ $$("[data-ig]").forEach((a) => {
   a.rel = "noopener";
 });
 $$("[data-logo]").forEach((i) => (i.src = C.logo));
-const mapsUrl =
-  "https://www.google.com/maps/search/?api=1&query=" +
-  encodeURIComponent(C.address);
-$("#directions").href = mapsUrl;
-$("#map-link").href = mapsUrl;
+const mapCoordinates = `${C.mapCoordinates.lat},${C.mapCoordinates.lon}`;
+const mapsQuery = encodeURIComponent(mapCoordinates);
+$("#directions").href =
+  `https://www.google.com/maps/dir/?api=1&destination=${mapsQuery}`;
+$("#map-link").href =
+  `https://www.google.com/maps/search/?api=1&query=${mapsQuery}`;
 $("#addr").textContent = C.address;
-$("#map-address").textContent = C.address;
-const mapBounds = [
-  C.mapCoordinates.lon - 0.004,
-  C.mapCoordinates.lat - 0.0025,
-  C.mapCoordinates.lon + 0.004,
-  C.mapCoordinates.lat + 0.0025,
-].join(",");
 $("#map-frame").src =
-  `https://www.openstreetmap.org/export/embed.html?bbox=${encodeURIComponent(mapBounds)}&layer=mapnik&marker=${encodeURIComponent(`${C.mapCoordinates.lat},${C.mapCoordinates.lon}`)}`;
+  `https://www.google.com/maps?q=${mapsQuery}&output=embed`;
 $("#heroimg").style.objectPosition = I.hero.pos || "center";
 $("#heroimg").src = I.hero.src;
 $("#aboutimg").src = I.about.src;
@@ -111,6 +105,7 @@ function render() {
   );
   $$("[data-i18n-alt]").forEach((e) => (e.alt = t(e.dataset.i18nAlt)));
   $("#map-frame").title = t("a11y.map");
+  updateMenuButton();
   $("#copy").textContent = t("foot.copy", { y: new Date().getFullYear() });
   const ct = (c, s) =>
     has(`cat.${c.id}.${s}`)
@@ -253,15 +248,41 @@ addEventListener("scroll", () => h.classList.toggle("on", scrollY > 40), {
   passive: true,
 });
 const bg = $(".burger"),
-  ul = $("nav ul");
-bg.onclick = () => {
-  const o = ul.classList.toggle("open");
-  bg.setAttribute("aria-expanded", o);
-};
+  ul = $("#primary-navigation-list"),
+  primaryNav = $("#primary-navigation"),
+  mobileNav = matchMedia("(max-width: 900px)");
+function updateMenuButton() {
+  const open = bg.getAttribute("aria-expanded") === "true";
+  bg.setAttribute("aria-label", t(open ? "a11y.menuClose" : "a11y.menu"));
+}
+function setMobileMenuOpen(open) {
+  const isOpen = open && mobileNav.matches;
+  ul.classList.toggle("open", isOpen);
+  bg.setAttribute("aria-expanded", String(isOpen));
+  ul.inert = mobileNav.matches && !isOpen;
+  updateMenuButton();
+}
+bg.onclick = () =>
+  setMobileMenuOpen(bg.getAttribute("aria-expanded") !== "true");
 ul.addEventListener("click", (e) => {
-  if (e.target.closest("a")) {
-    ul.classList.remove("open");
-    bg.setAttribute("aria-expanded", false);
+  if (e.target.closest("a")) setMobileMenuOpen(false);
+});
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && bg.getAttribute("aria-expanded") === "true") {
+    setMobileMenuOpen(false);
+    bg.focus();
   }
 });
+document.addEventListener("pointerdown", (e) => {
+  if (
+    mobileNav.matches &&
+    bg.getAttribute("aria-expanded") === "true" &&
+    !primaryNav.contains(e.target) &&
+    !bg.contains(e.target)
+  ) {
+    setMobileMenuOpen(false);
+  }
+});
+mobileNav.addEventListener("change", () => setMobileMenuOpen(false));
+setMobileMenuOpen(false);
 render();
