@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>014Barbershop | Barbearia no Funchal</title>
+    <meta
+      name="description"
+      content="Conhece a 014Barbershop no Funchal, Madeira. Descobre os nossos serviços de barbearia, cortes masculinos e cuidados de imagem. Consulta os serviços e reserva através do Booksy."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="014Barbershop | Barbearia no Funchal" />
+    <meta
+      property="og:description"
+      content="Barbearia masculina e cuidados de imagem no Funchal. Reserva o teu horário no Booksy."
+    />
+    <meta property="og:image" content="assets/img/logo.jpg" />
+    <meta property="og:locale" content="pt_PT" />
+    <!-- <link rel="canonical" href="https://SEU-DOMINIO.pt/"> (ativar quando o domínio estiver definido) -->
+    <link rel="icon" href="assets/img/favicon.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="wrap nav">
+        <a class="brand" href="#inicio" data-i18n-aria="a11y.home"
+          ><img data-logo data-i18n-alt="a11y.logo" alt="" /><span
+            >014Barbershop</span
+          ></a
+        >
+        <nav data-i18n-aria="a11y.main">
+          <ul>
+            <li><a href="#inicio" data-i18n="nav.home"></a></li>
+            <li><a href="#servicos" data-i18n="nav.services"></a></li>
+            <li><a href="#galeria" data-i18n="nav.gallery"></a></li>
+            <li><a href="#equipa" data-i18n="nav.team"></a></li>
+            <li><a href="#sobre" data-i18n="nav.about"></a></li>
+            <li><a href="#localizacao" data-i18n="nav.location"></a></li>
+            <li class="hide-m">
+              <a class="btn solid" data-booksy data-i18n="cta.book"></a>
+            </li>
+          </ul>
+        </nav>
+        <div class="tools">
+          <div class="lang-picker" id="lang-picker">
+            <button
+              id="lang-button"
+              class="lang"
+              type="button"
+              aria-haspopup="listbox"
+              aria-expanded="false"
+              aria-controls="lang-options"
+            >
+              <span id="lang-label"></span>
+            </button>
+            <ul
+              id="lang-options"
+              class="lang-options"
+              role="listbox"
+              aria-label="Idioma"
+              hidden
+            ></ul>
+          </div>
+          <button
+            class="burger"
+            data-i18n-aria="a11y.menu"
+            aria-expanded="false"
+          >
+            <span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="hero" id="inicio">
+        <div class="big" aria-hidden="true">014</div>
+        <div class="wrap">
+          <div>
+            <svg
+              class="crown"
+              viewBox="0 0 40 28"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path d="M2 8l9 7 9-13 9 13 9-7-4 18H6z" />
+            </svg>
+            <h1 data-i18n="hero.title"></h1>
+            <p class="lead" data-i18n="hero.lead"></p>
+            <p data-i18n="hero.text"></p>
+            <div class="cta">
+              <a class="btn solid" data-booksy data-i18n="cta.book"></a
+              ><a class="btn" href="#servicos" data-i18n="cta.discover"></a>
+            </div>
+          </div>
+          <div class="arch">
+            <img id="heroimg" data-i18n-alt="alt.hero" alt="" />
+          </div>
+        </div>
+      </section>
+
+      <section class="strip" data-i18n-aria="a11y.strip">
+        <div class="wrap">
+          <div>
+            <svg viewBox="0 0 24 24">
+              <circle cx="11" cy="11" r="7" />
+              <path d="M21 21l-5-5" />
+            </svg>
+            <h3 data-i18n="strip.1.t"></h3>
+            <p data-i18n="strip.1.p"></p>
+          </div>
+          <div>
+            <svg viewBox="0 0 24 24">
+              <circle cx="6" cy="6" r="3" />
+              <circle cx="6" cy="18" r="3" />
+              <path d="M20 4L8.5 15.5M14.5 14.5L20 20M8.5 8.5L12 12" />
+            </svg>
+            <h3 data-i18n="strip.2.t"></h3>
+            <p data-i18n="strip.2.p"></p>
+          </div>
+          <div>
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"
+              />
+            </svg>
+            <h3 data-i18n="strip.3.t"></h3>
+            <p data-i18n="strip.3.p"></p>
+          </div>
+          <div>
+            <svg viewBox="0 0 24 24">
+              <rect x="3" y="5" width="18" height="16" rx="1" />
+              <path d="M3 10h18M8 3v4M16 3v4" />
+            </svg>
+            <h3 data-i18n="strip.4.t"></h3>
+            <p data-i18n="strip.4.p"></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec" id="servicos">
+        <div class="wrap">
+          <div class="rule left rv">♛</div>
+          <h2 class="rv" data-i18n="serv.title"></h2>
+          <p class="sub rv" data-i18n="serv.sub"></p>
+          <div class="mosaic" id="mosaic"></div>
+          <div class="acc" id="acc"></div>
+          <p
+            class="sub"
+            style="margin-top: 20px; font-size: 0.9rem"
+            data-i18n="serv.note"
+          ></p>
+        </div>
+      </section>
+
+      <section class="sec about" id="sobre">
+        <div class="wrap">
+          <div class="frame rv">
+            <img
+              id="aboutimg"
+              loading="lazy"
+              data-i18n-alt="alt.about"
+              alt=""
+            />
+          </div>
+          <div class="rv">
+            <div class="rule left">♛</div>
+            <h2 data-i18n="about.title"></h2>
+            <p data-i18n="about.text"></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec" id="galeria">
+        <div class="wrap">
+          <div class="rule left rv">♛</div>
+          <h2 class="rv" data-i18n="gal.title"></h2>
+          <p class="sub rv" data-i18n="gal.sub"></p>
+          <div class="gal" id="gal"></div>
+          <div class="center">
+            <a class="btn" data-ig data-i18n="cta.ig"></a>
+          </div>
+        </div>
+      </section>
+      <dialog id="lb" data-i18n-aria="a11y.photo">
+        <img id="lbimg" alt="" /><button id="lbx" data-i18n-aria="a11y.close">
+          ×
+        </button>
+      </dialog>
+
+      <section class="sec about" id="equipa">
+        <div class="wrap">
+          <div class="rule rv">♛</div>
+          <h2 class="rv" style="text-align: center" data-i18n="team.title"></h2>
+          <p
+            class="sub rv"
+            style="margin-inline: auto; text-align: center"
+            data-i18n="team.sub"
+          ></p>
+          <div class="team" id="team"></div>
+        </div>
+      </section>
+
+      <section class="sec loc" id="localizacao">
+        <div class="wrap">
+          <div class="rv">
+            <div class="rule left">♛</div>
+            <h2 data-i18n="loc.title"></h2>
+            <address>
+              <svg viewBox="0 0 24 24">
+                <path d="M12 22s7-6.2 7-12a7 7 0 10-14 0c0 5.8 7 12 7 12z" />
+                <circle cx="12" cy="10" r="2.5" /></svg
+              ><span id="addr"></span>
+            </address>
+            <div class="cta" style="margin-top: 0">
+              <a
+                class="btn solid"
+                id="directions"
+                target="_blank"
+                rel="noopener"
+                data-i18n="cta.directions"
+              ></a
+              ><a class="btn" data-ig data-i18n="cta.igShort"></a>
+            </div>
+          </div>
+          <div class="map rv" id="map"></div>
+        </div>
+      </section>
+
+      <section class="sec ig">
+        <div class="wrap center">
+          <div class="rule">♛</div>
+          <h2 class="rv" data-i18n="ig.title"></h2>
+          <p class="sub rv" style="margin-inline: auto" data-i18n="ig.sub"></p>
+          <div class="reels" id="reels"></div>
+          <a class="btn" data-ig data-i18n="cta.viewIg"></a>
+        </div>
+      </section>
+
+      <section class="sec final">
+        <div class="wrap rv">
+          <div class="rule">♛</div>
+          <h2 data-i18n="final.title"></h2>
+          <p data-i18n="final.text"></p>
+          <a class="btn solid" data-booksy data-i18n="cta.book"></a>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="wrap">
+        <div class="foot">
+          <div>
+            <div class="brand">
+              <img data-logo data-i18n-alt="a11y.logo" alt="" /><span
+                >014Barbershop</span
+              >
+            </div>
+            <p
+              style="margin-top: 14px; max-width: 320px"
+              data-i18n="foot.desc"
+            ></p>
+          </div>
+          <div>
+            <h3 data-i18n="foot.nav"></h3>
+            <ul id="fnav"></ul>
+          </div>
+          <div>
+            <h3 data-i18n="foot.contact"></h3>
+            <ul>
+              <li data-i18n="foot.loc"></li>
+              <li><a data-ig data-i18n="cta.igShort"></a></li>
+              <li><a data-booksy data-i18n="foot.book"></a></li>
+            </ul>
+          </div>
+        </div>
+        <p class="copy" id="copy"></p>
+      </div>
+    </footer>
+    <div class="sticky">
+      <a class="btn solid" data-booksy data-i18n="cta.book"></a>
+    </div>
+    <script src="js/config.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
