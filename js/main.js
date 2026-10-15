@@ -39,14 +39,15 @@ $$("[data-ig]").forEach((a) => {
   a.rel = "noopener";
 });
 $$("[data-logo]").forEach((i) => (i.src = C.logo));
-const mapsQuery = encodeURIComponent(C.address);
+const mapCoordinates = `${C.mapCoordinates.lat},${C.mapCoordinates.lon}`;
+const mapCoordinatesQuery = encodeURIComponent(mapCoordinates);
 $("#directions").href =
-  `https://www.google.com/maps/dir/?api=1&destination=${mapsQuery}`;
+  `https://www.google.com/maps/dir/?api=1&destination=${mapCoordinatesQuery}`;
 $("#map-link").href =
-  `https://www.google.com/maps/search/?api=1&query=${mapsQuery}`;
+  `https://www.google.com/maps/search/?api=1&query=${mapCoordinatesQuery}`;
 $("#addr").textContent = C.address;
 $("#map-frame").src =
-  `https://www.google.com/maps?q=${mapsQuery}&output=embed`;
+  `https://www.google.com/maps?q=${mapCoordinatesQuery}&output=embed`;
 $("#heroimg").style.objectPosition = I.hero.pos || "center";
 $("#heroimg").src = I.hero.src;
 $("#aboutimg").src = I.about.src;

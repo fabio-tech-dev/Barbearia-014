@@ -6,6 +6,7 @@ const CONFIG = {
   logo: "assets/img/logo.jpg", // trocar pela logo original em alta qualidade
   booksyUrl: "https://014barbershop.booksy.com/", // URL única usada por TODOS os botões de reserva
   instagramUrl: "https://www.instagram.com/014barbershop/",
+  mapCoordinates: { lat: 32.6593252, lon: -16.9486777 },
   // VÍDEOS da secção Instagram: ficheiro (sem som), imagem de capa e link do Reel no Instagram
   reels: [
     {
